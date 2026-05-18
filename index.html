@@ -9,131 +9,125 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#F0F4F8;color:#1F3864;min-height:100vh}
 .hdr{background:#1F3864;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.hdr h1{color:#fff;font-size:17px;font-weight:600;display:flex;align-items:center;gap:8px}
+.hdr h1{color:#fff;font-size:17px;font-weight:600}
 .hdr-right{display:flex;align-items:center;gap:10px}
-.hdr-badge{background:rgba(255,255,255,.18);color:#fff;font-size:11px;padding:3px 10px;border-radius:20px}
-.sync-status{font-size:11px;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.1);color:#fff}
+.badge{background:rgba(255,255,255,.18);color:#fff;font-size:11px;padding:3px 10px;border-radius:20px}
+.sync{font-size:11px;color:rgba(255,255,255,.8);padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.1)}
 main{padding:20px 24px;max-width:1400px;margin:0 auto}
-
-/* ── CARDS ── */
 .card{background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(31,56,100,.1);margin-bottom:18px;border:1px solid #E3EDF5;overflow:hidden}
 .card-head{padding:14px 20px;border-bottom:1px solid #E3EDF5;background:#F7FAFD;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.card-head h2{font-size:14px;font-weight:600;color:#1F3864;display:flex;align-items:center;gap:7px}
+.card-head h2{font-size:14px;font-weight:600;color:#1F3864}
 .card-body{padding:16px 20px}
-
-/* ── UPLOAD ── */
 .dz{border:2px dashed #9DC3E6;border-radius:10px;padding:18px 20px;cursor:pointer;display:flex;align-items:center;gap:12px;background:#F7FAFD;transition:all .15s;flex:1;min-width:240px}
 .dz:hover,.dz.over{border-color:#2E75B6;background:#EAF3FA}
-.dz-icon{font-size:26px;flex-shrink:0}
 .dz-txt strong{display:block;font-size:13px;color:#1F3864}
 .dz-txt span{font-size:12px;color:#777}
 #fi{display:none}
 .upload-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-
-/* ── BUTTONS ── */
-.btn{padding:8px 16px;border-radius:8px;border:none;font-size:13px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .15s}
-.btn-blue{background:#2E75B6;color:#fff}.btn-blue:hover{background:#1F3864}
-.btn-red{background:#E74C3C;color:#fff}.btn-red:hover{background:#C0392B}
-.btn-outline{background:#fff;color:#2E75B6;border:1.5px solid #2E75B6}.btn-outline:hover{background:#EAF3FA}
-.btn-gray{background:#ECF0F1;color:#555}.btn-gray:hover{background:#D5DBDB}
-.btn:disabled{opacity:.4;cursor:not-allowed}
-.btn-sm{padding:5px 11px;font-size:12px}
-
-/* ── STATUS ── */
-.status{padding:8px 14px;border-radius:8px;font-size:12px;display:none;align-items:center;gap:7px;margin-top:10px}
-.status.ok{display:flex;background:#EAFAF1;color:#1E8449;border:1px solid #A9DFBF}
-.status.err{display:flex;background:#FDEDEC;color:#C0392B;border:1px solid #F5B7B1}
-.status.info{display:flex;background:#EAF3FA;color:#1F618D;border:1px solid #AED6F1}
-
-/* ── STATS ── */
+.btn{padding:7px 14px;border-radius:8px;border:1.5px solid;font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:all .15s;background:#fff}
+.btn-blue{border-color:#2E75B6;color:#2E75B6}.btn-blue:hover{background:#2E75B6;color:#fff}
+.btn-red{border-color:#E74C3C;color:#E74C3C}.btn-red:hover{background:#E74C3C;color:#fff}
+.msg{padding:8px 14px;border-radius:8px;font-size:12px;display:none;align-items:center;gap:7px;margin-top:10px}
+.msg.ok{display:flex;background:#EAFAF1;color:#1E8449;border:1px solid #A9DFBF}
+.msg.err{display:flex;background:#FDEDEC;color:#C0392B;border:1px solid #F5B7B1}
+.msg.info{display:flex;background:#EAF3FA;color:#1F618D;border:1px solid #AED6F1}
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px}
 .stat{background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 2px 8px rgba(31,56,100,.08);border-right:4px solid #2E75B6}
 .stat .lb{font-size:11px;color:#888;margin-bottom:4px}
 .stat .vl{font-size:22px;font-weight:700;color:#1F3864}
-
-/* ── TABS ── */
-.tabs{display:flex;gap:2px;margin-bottom:0;border-bottom:2px solid #E3EDF5}
-.tab{padding:10px 20px;border:none;background:none;font-size:13px;font-weight:600;color:#888;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .15s}
+.tabs{display:flex;gap:2px;border-bottom:2px solid #E3EDF5}
+.tab{padding:10px 20px;border:none;background:none;font-size:13px;font-weight:600;color:#888;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
 .tab.on{color:#2E75B6;border-bottom-color:#2E75B6}
-.tab:hover:not(.on){color:#1F3864}
 .tab-panel{display:none;padding:20px}.tab-panel.on{display:block}
-
-/* ── FILTER BAR ── */
 .filter-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 16px;background:#F7FAFD;border-radius:8px;margin-bottom:16px;border:1px solid #E3EDF5}
 .filter-bar label{font-size:12px;font-weight:600;color:#1F3864}
-.filter-bar select,.filter-bar input[type=date]{padding:6px 10px;border-radius:7px;border:1px solid #C5D8EC;font-size:12px;color:#1F3864;background:#fff;font-family:inherit}
-.filter-bar select:focus,.filter-bar input:focus{outline:none;border-color:#2E75B6}
-
-/* ── DELETE PANEL ── */
-.delete-panel{background:#FFF5F5;border:1px solid #F5B7B1;border-radius:10px;padding:16px 20px}
-.delete-panel h3{font-size:13px;font-weight:600;color:#C0392B;margin-bottom:12px;display:flex;align-items:center;gap:6px}
-.delete-preview{margin:12px 0;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid #F5B7B1;font-size:13px;color:#C0392B;font-weight:600;min-height:36px}
-
-/* ── TABLE ── */
-.tbl-wrap{overflow:auto;max-height:450px;border-radius:8px;border:1px solid #E3EDF5}
+.filter-bar select,.filter-bar input{padding:6px 10px;border-radius:7px;border:1px solid #C5D8EC;font-size:12px;color:#1F3864;background:#fff;font-family:inherit}
+.tbl-wrap{overflow:auto;max-height:460px;border-radius:8px;border:1px solid #E3EDF5}
 table{width:100%;border-collapse:collapse;font-size:13px}
 thead th{background:#1F3864;color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12px;position:sticky;top:0;z-index:5;white-space:nowrap}
-tbody td{padding:8px 14px;border-bottom:1px solid #F0F4F8;text-align:left}
+tbody td{padding:8px 14px;border-bottom:1px solid #F0F4F8}
 tbody tr:hover td{background:#F7FAFD}
-.cl-cell{background:#1F3864 !important;color:#fff;font-weight:600;text-align:center !important}
-.cl-cell2{background:rgba(31,56,100,.7) !important;color:#fff;text-align:center !important}
-.dm-cell{background:#BDD7EE;color:#1F3864;font-weight:600;text-align:center !important}
-.tot-row td{background:#1F3864 !important;color:#fff !important;font-weight:700}
+.cl1{background:#1F3864 !important;color:#fff;font-weight:600;text-align:center !important}
+.cl2{background:rgba(31,56,100,.65) !important;color:#fff;text-align:center !important}
+.dm{background:#BDD7EE;color:#1F3864;font-weight:600;text-align:center !important}
+.tot td{background:#1F3864 !important;color:#fff !important;font-weight:700}
 .num{text-align:right !important;font-variant-numeric:tabular-nums}
-
-/* ── PAGER ── */
-.pager{display:flex;align-items:center;gap:8px;padding:10px 0;font-size:12px;color:#888}
-.pager button{padding:4px 12px;border:1px solid #C5D8EC;border-radius:6px;background:#fff;font-size:12px;cursor:pointer;font-family:inherit}
-.pager button:disabled{opacity:.35;cursor:not-allowed}
-
-/* ── NOTE ── */
-.note{font-size:11px;color:#aaa;margin-top:10px;text-align:center}
-
-/* ── MODAL ── */
-.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;display:flex;align-items:center;justify-content:center;display:none}
-.modal-bg.open{display:flex}
-.modal{background:#fff;border-radius:14px;padding:28px;max-width:420px;width:90%;box-shadow:0 8px 32px rgba(0,0,0,.18)}
-.modal h2{font-size:16px;font-weight:700;margin-bottom:12px;color:#1F3864}
-.modal p{font-size:13px;color:#555;margin-bottom:20px;line-height:1.6}
-.modal-btns{display:flex;gap:10px;justify-content:flex-end}
-
-/* ── PIN ── */
-.pin-overlay{position:fixed;inset:0;background:#1F3864;z-index:999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px}
-.pin-box{background:#fff;border-radius:16px;padding:32px 40px;text-align:center;max-width:360px;width:90%}
-.pin-box h2{font-size:18px;font-weight:700;color:#1F3864;margin-bottom:8px}
+.pg{display:flex;align-items:center;gap:8px;padding:10px 0;font-size:12px;color:#888}
+.pg button{padding:4px 12px;border:1px solid #C5D8EC;border-radius:6px;background:#fff;font-size:12px;cursor:pointer;font-family:inherit}
+.pg button:disabled{opacity:.35;cursor:not-allowed}
+.del-zone{background:#FFF5F5;border:1px solid #F5B7B1;border-radius:10px;padding:16px 20px}
+.del-zone h3{font-size:13px;font-weight:600;color:#C0392B;margin-bottom:12px}
+.del-preview{margin:10px 0;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid #F5B7B1;font-size:13px;color:#C0392B;min-height:36px}
+.note{font-size:11px;color:#aaa;margin-top:10px;text-align:center;padding:6px}
+/* PIN */
+.overlay{position:fixed;inset:0;background:#1F3864;z-index:1000;display:flex;align-items:center;justify-content:center}
+.pin-box{background:#fff;border-radius:16px;padding:36px 40px;text-align:center;max-width:360px;width:90%}
+.pin-box h2{font-size:20px;font-weight:700;color:#1F3864;margin-bottom:6px}
 .pin-box p{font-size:13px;color:#777;margin-bottom:20px}
-.pin-input{width:100%;padding:12px;border:2px solid #C5D8EC;border-radius:8px;font-size:20px;text-align:center;letter-spacing:6px;font-family:monospace;outline:none;margin-bottom:12px}
+.pin-input{width:100%;padding:12px;border:2px solid #C5D8EC;border-radius:8px;font-size:22px;text-align:center;letter-spacing:8px;font-family:monospace;outline:none;margin-bottom:10px;color:#1F3864}
 .pin-input:focus{border-color:#2E75B6}
-.pin-err{color:#E74C3C;font-size:12px;height:16px}
-
-@media(max-width:600px){
-  main{padding:12px}
-  .stats-grid{grid-template-columns:1fr 1fr}
-}
+.pin-err{color:#E74C3C;font-size:12px;height:16px;margin-bottom:8px}
+.pin-btn{width:100%;padding:12px;background:#1F3864;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer}
+/* TOKEN */
+.tok-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;display:none;align-items:center;justify-content:center}
+.tok-overlay.open{display:flex}
+.tok-box{background:#fff;border-radius:14px;padding:32px;max-width:500px;width:92%;box-shadow:0 8px 40px rgba(0,0,0,.25)}
+.tok-box h2{font-size:18px;font-weight:700;color:#1F3864;margin-bottom:8px}
+.tok-box p{font-size:13px;color:#555;margin-bottom:10px;line-height:1.7}
+.tok-box ol{font-size:12px;color:#666;margin:0 0 14px 20px;line-height:2.2}
+.tok-box ol a{color:#2E75B6;font-weight:600}
+.tok-input{width:100%;padding:10px 12px;border:1.5px solid #C5D8EC;border-radius:8px;font-size:13px;font-family:monospace;margin-bottom:8px;outline:none;color:#1F3864}
+.tok-input:focus{border-color:#2E75B6}
+.tok-note{font-size:11px;color:#aaa;margin-bottom:14px}
+.tok-btn{width:100%;padding:11px;background:#1F3864;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer}
+/* CONFIRM */
+.conf-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:998;display:none;align-items:center;justify-content:center}
+.conf-overlay.open{display:flex}
+.conf-box{background:#fff;border-radius:14px;padding:28px;max-width:400px;width:90%}
+.conf-box h2{font-size:16px;font-weight:700;margin-bottom:10px;color:#1F3864}
+.conf-box p{font-size:13px;color:#555;margin-bottom:20px;line-height:1.6}
+.conf-btns{display:flex;gap:10px;justify-content:flex-end}
 </style>
 </head>
 <body>
 
-<!-- PIN OVERLAY -->
-<div class="pin-overlay" id="pinOverlay">
+<!-- PIN -->
+<div class="overlay" id="pinOverlay">
   <div class="pin-box">
-    <div style="font-size:40px;margin-bottom:8px">🔐</div>
+    <div style="font-size:44px;margin-bottom:8px">📊</div>
     <h2>PA Activity Tracker</h2>
-    <p>Enter the access PIN to continue</p>
-    <input class="pin-input" type="password" id="pinInput" maxlength="6" placeholder="••••" onkeydown="if(event.key==='Enter')checkPin()">
+    <p>Enter your PIN to access</p>
+    <input class="pin-input" type="password" id="pinIn" maxlength="6" placeholder="••••" onkeydown="if(event.key==='Enter')doPin()">
     <div class="pin-err" id="pinErr"></div>
-    <button class="btn btn-blue" style="width:100%;justify-content:center;margin-top:8px" onclick="checkPin()">Enter →</button>
+    <button class="pin-btn" onclick="doPin()">Enter →</button>
   </div>
 </div>
 
-<!-- CONFIRM MODAL -->
-<div class="modal-bg" id="confirmModal">
-  <div class="modal">
-    <h2>⚠️ Confirm Delete</h2>
-    <p id="confirmMsg"></p>
-    <div class="modal-btns">
-      <button class="btn btn-gray" onclick="closeModal()">Cancel</button>
-      <button class="btn btn-red" onclick="confirmDelete()">Delete</button>
+<!-- TOKEN -->
+<div class="tok-overlay" id="tokOverlay">
+  <div class="tok-box">
+    <h2>🔑 Connect to GitHub</h2>
+    <p>A GitHub Personal Access Token is needed to sync data across all users. Each team member enters their token once — it stays in their browser only.</p>
+    <ol>
+      <li>Open: <a href="https://github.com/settings/tokens/new?description=PA+Tracker&scopes=repo" target="_blank">github.com/settings/tokens/new</a></li>
+      <li>Set Note: <strong>PA Tracker</strong></li>
+      <li>Check ✅ <strong>repo</strong> (full control of private repositories)</li>
+      <li>Click <strong>Generate token</strong> — copy it and paste below</li>
+    </ol>
+    <input class="tok-input" type="password" id="tokIn" placeholder="ghp_xxxxxxxxxxxxxxxx" onkeydown="if(event.key==='Enter')doToken()">
+    <p class="tok-note">Your token is saved only in your browser — never shared or uploaded anywhere except GitHub API.</p>
+    <button class="tok-btn" onclick="doToken()">Connect →</button>
+  </div>
+</div>
+
+<!-- CONFIRM -->
+<div class="conf-overlay" id="confOverlay">
+  <div class="conf-box">
+    <h2 id="confTitle"></h2>
+    <p id="confMsg"></p>
+    <div class="conf-btns">
+      <button class="btn btn-blue" onclick="closeConf()">Cancel</button>
+      <button class="btn btn-red" id="confOk">Confirm delete</button>
     </div>
   </div>
 </div>
@@ -141,27 +135,25 @@ tbody tr:hover td{background:#F7FAFD}
 <div class="hdr">
   <h1>📊 PA Activity Tracker</h1>
   <div class="hdr-right">
-    <span class="sync-status" id="syncStatus">🔄 Loading...</span>
-    <span class="hdr-badge" id="hBadge">No data</span>
+    <span class="sync" id="syncSt">Loading...</span>
+    <span class="badge" id="hBadge">No data</span>
   </div>
 </div>
 
 <main>
-
-<!-- UPLOAD CARD -->
 <div class="card">
   <div class="card-head">
     <h2>📂 Upload Raw Data</h2>
-    <div style="display:flex;gap:8px">
-      <button class="btn btn-outline btn-sm" onclick="dlSummary()">⬇ Summary</button>
-      <button class="btn btn-outline btn-sm" onclick="dlRaw()">⬇ Raw Data</button>
-      <button class="btn btn-red btn-sm" onclick="showClearConfirm()">🗑 Clear All</button>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn-blue" onclick="dlSum()">⬇ Summary</button>
+      <button class="btn btn-blue" onclick="dlRaw()">⬇ Raw Data</button>
+      <button class="btn btn-red" onclick="askClearAll()">🗑 Clear All</button>
     </div>
   </div>
   <div class="card-body">
     <div class="upload-row">
       <div class="dz" id="dz" onclick="document.getElementById('fi').click()">
-        <div class="dz-icon">📄</div>
+        <div style="font-size:26px;flex-shrink:0">📄</div>
         <div class="dz-txt">
           <strong>Drop .xlsx file here or click to browse</strong>
           <span>New rows merged automatically — duplicates skipped by ENC</span>
@@ -169,11 +161,10 @@ tbody tr:hover td{background:#F7FAFD}
       </div>
       <input type="file" id="fi" accept=".xlsx,.xls" multiple>
     </div>
-    <div class="status" id="statusBar"></div>
+    <div class="msg" id="msgBar"></div>
   </div>
 </div>
 
-<!-- STATS -->
 <div class="stats-grid">
   <div class="stat"><div class="lb">Total Records</div><div class="vl" id="sN">—</div></div>
   <div class="stat" style="border-color:#27AE60"><div class="lb">Count PA</div><div class="vl" id="sP">—</div></div>
@@ -182,189 +173,182 @@ tbody tr:hover td{background:#F7FAFD}
   <div class="stat" style="border-color:#E67E22"><div class="lb">Latest Date</div><div class="vl" id="sD" style="font-size:15px">—</div></div>
 </div>
 
-<!-- MAIN TABS -->
 <div class="card" style="padding:0">
   <div style="padding:0 20px">
     <div class="tabs">
-      <button class="tab on" onclick="goTab('summary',this)">📊 Summary</button>
-      <button class="tab" onclick="goTab('rawdata',this)">📋 Raw Data</button>
-      <button class="tab" onclick="goTab('delete',this)">🗑 Delete Records</button>
+      <button class="tab on" onclick="goTab('sum',this)">📊 Summary</button>
+      <button class="tab" onclick="goTab('raw',this)">📋 Raw Data</button>
+      <button class="tab" onclick="goTab('del',this)">🗑 Delete Records</button>
     </div>
   </div>
 
-  <!-- SUMMARY TAB -->
-  <div class="tab-panel on" id="tab-summary">
+  <div class="tab-panel on" id="tab-sum">
     <div class="filter-bar">
-      <label>From</label>
-      <input type="date" id="fF" onchange="renderSummary()">
-      <label>To</label>
-      <input type="date" id="fT" onchange="renderSummary()">
-      <button class="btn btn-gray btn-sm" onclick="resetDates()">🔄 Reset</button>
+      <label>From</label><input type="date" id="fF" onchange="renderSum()">
+      <label>To</label><input type="date" id="fT" onchange="renderSum()">
+      <button class="btn btn-blue" onclick="resetDates()">↺ Reset</button>
     </div>
-    <div class="tbl-wrap" id="sWrap">
-      <div style="text-align:center;padding:40px;color:#bbb">Upload a file to see summary</div>
-    </div>
+    <div class="tbl-wrap" id="sWrap"><div style="padding:40px;text-align:center;color:#bbb">Upload a file to see summary</div></div>
   </div>
 
-  <!-- RAW DATA TAB -->
-  <div class="tab-panel" id="tab-rawdata">
+  <div class="tab-panel" id="tab-raw">
     <div class="filter-bar">
       <label>Search</label>
-      <input type="text" id="rSrch" placeholder="search..." style="padding:6px 10px;border-radius:7px;border:1px solid #C5D8EC;font-size:12px;min-width:160px;font-family:inherit" oninput="rp=1;renderRaw()">
+      <input type="text" id="rSrch" placeholder="search..." style="min-width:150px" oninput="rp=1;renderRaw()">
       <label>Cluster</label>
       <select id="rCl" onchange="rp=1;renderRaw()">
-        <option value="">All</option>
-        <option>R2</option><option>Qassim</option><option>Jouf</option><option>Bahah</option>
+        <option value="">All</option><option>R2</option><option>Qassim</option><option>Jouf</option><option>Bahah</option>
       </select>
       <label>Domain</label>
       <select id="rDm" onchange="rp=1;renderRaw()">
-        <option value="">All</option>
-        <option>Outpatient</option><option>Emergency</option><option>Inpatient</option>
+        <option value="">All</option><option>Outpatient</option><option>Emergency</option><option>Inpatient</option>
       </select>
       <span id="rCnt" style="font-size:12px;color:#888;margin-right:auto"></span>
     </div>
     <div class="tbl-wrap">
       <table><thead id="rH"></thead><tbody id="rB"></tbody></table>
-      <div id="rEmpty" style="text-align:center;padding:40px;color:#bbb;display:none">Upload a file to see raw data</div>
+      <div id="rEmp" style="padding:40px;text-align:center;color:#bbb;display:none">No data</div>
     </div>
-    <div class="pager" id="pg"></div>
+    <div class="pg" id="pg"></div>
   </div>
 
-  <!-- DELETE TAB -->
-  <div class="tab-panel" id="tab-delete">
-    <div class="delete-panel">
+  <div class="tab-panel" id="tab-del">
+    <div class="del-zone">
       <h3>⚠️ Delete records by cluster and date range</h3>
-      <div class="filter-bar" style="margin-bottom:12px">
+      <div class="filter-bar" style="margin-bottom:10px;border:none;background:transparent;padding:0">
         <label>Cluster</label>
         <select id="dCl">
-          <option value="">-- Select cluster --</option>
-          <option>R2</option><option>Qassim</option><option>Jouf</option><option>Bahah</option>
+          <option value="">— select —</option><option>R2</option><option>Qassim</option><option>Jouf</option><option>Bahah</option>
         </select>
-        <label>From</label>
-        <input type="date" id="dF">
-        <label>To</label>
-        <input type="date" id="dT">
-        <button class="btn btn-gray btn-sm" onclick="previewDelete()">👁 Preview</button>
+        <label>From</label><input type="date" id="dF">
+        <label>To</label><input type="date" id="dT">
+        <button class="btn btn-blue" onclick="previewDel()">👁 Preview</button>
       </div>
-      <div class="delete-preview" id="delPreview">Select a cluster and date range, then click Preview</div>
-      <div style="margin-top:12px;display:flex;gap:10px">
-        <button class="btn btn-red" id="delBtn" onclick="showDeleteConfirm()" disabled>🗑 Delete Selected Records</button>
-        <span style="font-size:12px;color:#888;align-self:center">This action cannot be undone</span>
+      <div class="del-preview" id="delPrev">Select a cluster and date range, then click Preview</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:12px">
+        <button id="delBtn" disabled onclick="askDel()" class="btn btn-red" style="opacity:.4">🗑 Delete selected records</button>
+        <span style="font-size:12px;color:#888">This action cannot be undone</span>
       </div>
     </div>
   </div>
-
 </div>
 
 <div class="note" id="note"></div>
 </main>
 
 <script>
-// ── CONFIG — change these ──────────────────────────────────────────────────────
-const PIN       = '1234';          // change this PIN
-const STORE_KEY = 'pa_tracker_v3'; // storage key
+// ── CONFIG ────────────────────────────────────────────────────────────────────
+const PIN      = '1234';
+const GH_OWNER = 'wmmesh64-design';
+const GH_REPO  = 'stepwise';
+const GH_FILE  = 'data.json';
+const SK       = 'pa_gh_token';
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
 const CLS=['R2','Qassim','Jouf','Bahah'];
 const DMS=['Outpatient','Emergency','Inpatient'];
 const DS2={Outpatient:'OP',Emergency:'EM',Inpatient:'IP'};
-const CL='CLUSTER',DM='DOMAIN',DT='DATE';
-const RG='Registered',EL='Eligiblity Transaction',PA='Pre-Authorization',AM='PA Amonut';
+const CL='CLUSTER',DM='DOMAIN',DT='DATE',RG='Registered',EL='Eligiblity Transaction',PA='Pre-Authorization',AM='PA Amonut';
 const PG=100;
-let rp=1,data=[],hdrs=[],pendingDelete=[];
+let rp=1, data=[], hdrs=[], pending=[], ghToken='', fileSha='';
 
 // ── PIN ───────────────────────────────────────────────────────────────────────
-function checkPin(){
-  const v=document.getElementById('pinInput').value;
+function doPin(){
+  const v=document.getElementById('pinIn').value;
   if(v===PIN){
     document.getElementById('pinOverlay').style.display='none';
-    loadData();
+    initApp();
   } else {
     document.getElementById('pinErr').textContent='Incorrect PIN';
-    document.getElementById('pinInput').value='';
+    document.getElementById('pinIn').value='';
     setTimeout(()=>document.getElementById('pinErr').textContent='',2000);
   }
 }
-document.getElementById('pinInput').addEventListener('keydown',e=>{if(e.key==='Enter')checkPin();});
+document.getElementById('pinIn').addEventListener('keydown',e=>{if(e.key==='Enter')doPin();});
 
-// ── STORAGE (shared=true so all users see same data) ─────────────────────────
-function loadData(){
-  setSyncStatus('Loading...');
-  try{
-    // Read chunked localStorage
-    const meta = localStorage.getItem(STORE_KEY+'_meta');
-    if(meta){
-      const {chunks, hdrs: h} = JSON.parse(meta);
-      let rows = [];
-      for(let i=0;i<chunks;i++){
-        const chunk = localStorage.getItem(STORE_KEY+'_'+i);
-        if(chunk) rows = rows.concat(JSON.parse(chunk));
-      }
-      data = rows; hdrs = h||[];
-      refresh();
-      setSyncStatus('Loaded · '+data.length.toLocaleString()+' records');
-    } else {
-      setSyncStatus('No data — upload a file to start');
-    }
-  }catch(e){setSyncStatus('Load error: '+e.message);}
-}
-
-function saveData(){
-  setSyncStatus('Saving...');
-  try{
-    // Clear old chunks
-    let i=0;
-    while(localStorage.getItem(STORE_KEY+'_'+i)!==null){
-      localStorage.removeItem(STORE_KEY+'_'+i); i++;
-    }
-    // Split rows into ~500KB chunks to avoid quota issues
-    const CHUNK=2000;
-    const chunks = Math.ceil(data.length/CHUNK)||1;
-    for(let c=0;c<chunks;c++){
-      const slice = data.slice(c*CHUNK,(c+1)*CHUNK);
-      localStorage.setItem(STORE_KEY+'_'+c, JSON.stringify(slice));
-    }
-    localStorage.setItem(STORE_KEY+'_meta', JSON.stringify({chunks, hdrs}));
-    setSyncStatus('Saved · '+data.length.toLocaleString()+' records');
-    return true;
-  }catch(e){
-    setSyncStatus('Save failed');
-    showStatus('err','Storage full — try deleting old data first. Error: '+e.message);
-    return false;
+// ── INIT ──────────────────────────────────────────────────────────────────────
+function initApp(){
+  ghToken = localStorage.getItem(SK) || '';
+  if(!ghToken){
+    document.getElementById('tokOverlay').classList.add('open');
+    setSt('Token required');
+  } else {
+    loadData();
   }
 }
 
-function setSyncStatus(t){document.getElementById('syncStatus').textContent=t;}
+// ── TOKEN ─────────────────────────────────────────────────────────────────────
+function doToken(){
+  const t=document.getElementById('tokIn').value.trim();
+  if(!t){ alert('Please enter your GitHub token'); return; }
+  ghToken=t;
+  localStorage.setItem(SK,t);
+  document.getElementById('tokOverlay').classList.remove('open');
+  loadData();
+}
+
+// ── LOAD FROM GITHUB ──────────────────────────────────────────────────────────
+async function loadData(){
+  setSt('Syncing...');
+  try{
+    const url=`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`;
+    const r=await fetch(url,{headers:{Authorization:'token '+ghToken,Accept:'application/vnd.github.v3+json'}});
+    if(r.status===404){ setSt('No data yet — upload a file'); return; }
+    if(r.status===401){
+      ghToken=''; localStorage.removeItem(SK);
+      document.getElementById('tokOverlay').classList.add('open');
+      setSt('Token invalid — re-enter'); return;
+    }
+    if(!r.ok){ setSt('GitHub error '+r.status); return; }
+    const j=await r.json();
+    fileSha=j.sha;
+    const d=JSON.parse(atob(j.content.replace(/\n/g,'')));
+    data=d.rows||[]; hdrs=d.hdrs||[];
+    refresh();
+    setSt('Synced · '+data.length.toLocaleString()+' records');
+  }catch(e){ setSt('Error: '+e.message); }
+}
+
+// ── SAVE TO GITHUB ────────────────────────────────────────────────────────────
+async function saveData(){
+  setSt('Saving...');
+  try{
+    const payload=JSON.stringify({rows:data,hdrs});
+    const enc=btoa(unescape(encodeURIComponent(payload)));
+    const body={message:'Update tracker data',content:enc};
+    if(fileSha) body.sha=fileSha;
+    const url=`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`;
+    const r=await fetch(url,{method:'PUT',headers:{Authorization:'token '+ghToken,'Content-Type':'application/json'},body:JSON.stringify(body)});
+    if(!r.ok){ const e=await r.json(); setSt('Save failed'); showMsg('err','GitHub error: '+(e.message||r.status)); return false; }
+    const j=await r.json();
+    fileSha=j.content.sha;
+    setSt('Saved · '+data.length.toLocaleString()+' records');
+    return true;
+  }catch(e){ setSt('Save failed'); showMsg('err','Error: '+e.message); return false; }
+}
 
 // ── DRAG & DROP ───────────────────────────────────────────────────────────────
 const dz=document.getElementById('dz'),fi=document.getElementById('fi');
-dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('over');});
+dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('over')});
 dz.addEventListener('dragleave',()=>dz.classList.remove('over'));
-dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('over');fi.files=e.dataTransfer.files;handleUpload();});
-fi.addEventListener('change',handleUpload);
+dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('over');fi.files=e.dataTransfer.files;upload()});
+fi.addEventListener('change',upload);
 
-async function handleUpload(){
+async function upload(){
   const files=fi.files; if(!files.length)return;
-  showStatus('info','Reading file...');
+  showMsg('info','Reading...');
   try{
-    let nRows=[],nHdrs=[];
-    for(const f of files){
-      const r=await readXlsx(f);
-      if(r.h.length>nHdrs.length)nHdrs=r.h;
-      nRows=nRows.concat(r.d);
-    }
-    if(!nHdrs.length){showStatus('err','No data found in file');return;}
-    if(!hdrs.length)hdrs=nHdrs;
-    const encSet=new Set(data.map(r=>r['ENC']).filter(Boolean));
-    const added=data.length?nRows.filter(r=>!encSet.has(r['ENC'])):nRows;
+    let nR=[],nH=[];
+    for(const f of files){const r=await readXlsx(f);if(r.h.length>nH.length)nH=r.h;nR=nR.concat(r.d);}
+    if(!nH.length){showMsg('err','No data found in file');return;}
+    if(!hdrs.length) hdrs=nH;
+    const enc=new Set(data.map(r=>r['ENC']).filter(Boolean));
+    const added=data.length?nR.filter(r=>!enc.has(r['ENC'])):nR;
     data=data.concat(added);
-    const dup=nRows.length-added.length;
-    const ok=saveData();
-    if(ok){
-      showStatus('ok',`✅ Added ${added.length.toLocaleString()} records${dup?` · ${dup} duplicates skipped`:''}`);
-      refresh();
-    }
-  }catch(e){showStatus('err','Error: '+e.message);}
+    const dup=nR.length-added.length;
+    const ok=await saveData();
+    if(ok){ showMsg('ok','Added '+added.length.toLocaleString()+' records'+(dup?' · '+dup+' duplicates skipped':'')); refresh(); }
+  }catch(e){showMsg('err','Error: '+e.message);}
   fi.value='';
 }
 
@@ -374,19 +358,14 @@ function readXlsx(f){
     rd.onload=e=>{
       try{
         const wb=XLSX.read(e.target.result,{type:'array',cellDates:true});
-        const sheets=wb.SheetNames.filter(n=>n.startsWith('Raw_Data')&&n!=='Date_List');
-        const use=sheets.length?sheets:[wb.SheetNames[0]];
+        const sh=wb.SheetNames.filter(n=>n.startsWith('Raw_Data')&&n!=='Date_List');
+        const use=sh.length?sh:[wb.SheetNames[0]];
         let all=[],h=[];
-        use.forEach(sn=>{
-          const ws=wb.Sheets[sn];
-          const j=XLSX.utils.sheet_to_json(ws,{raw:false,dateNF:'YYYY-MM-DD'});
-          if(j.length&&!h.length)h=Object.keys(j[0]);
-          all=all.concat(j);
-        });
+        use.forEach(sn=>{const j=XLSX.utils.sheet_to_json(wb.Sheets[sn],{raw:false,dateNF:'YYYY-MM-DD'});if(j.length&&!h.length)h=Object.keys(j[0]);all=all.concat(j);});
         res({h,d:all});
       }catch(err){rej(err);}
     };
-    rd.onerror=()=>rej(new Error('Read failed'));
+    rd.onerror=()=>rej(new Error('read failed'));
     rd.readAsArrayBuffer(f);
   });
 }
@@ -394,201 +373,125 @@ function readXlsx(f){
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const isYes=v=>v&&String(v).trim().toLowerCase()==='yes';
 const toN=v=>{const n=parseFloat(v);return isNaN(n)?0:n;};
-const fmtN=n=>{if(n>=1e9)return(n/1e9).toFixed(1)+'B';if(n>=1e6)return(n/1e6).toFixed(1)+'M';if(n>=1e3)return(n/1e3).toFixed(0)+'K';return n.toFixed(0);};
-
-function allDates(){return data.map(r=>r[DT]).filter(Boolean).map(d=>new Date(d)).filter(d=>!isNaN(d));}
-function getMinMax(){const d=allDates();if(!d.length)return[null,null];return[new Date(Math.min(...d)),new Date(Math.max(...d))];}
-
-function syncFilterRange(){
-  const[mn,mx]=getMinMax(); if(!mn)return;
+const fmt=n=>{if(n>=1e9)return(n/1e9).toFixed(1)+'B';if(n>=1e6)return(n/1e6).toFixed(1)+'M';if(n>=1e3)return(n/1e3).toFixed(0)+'K';return n.toFixed(0);};
+function allDts(){return data.map(r=>r[DT]).filter(Boolean).map(d=>new Date(d)).filter(d=>!isNaN(d));}
+function minMax(){const d=allDts();if(!d.length)return[null,null];return[new Date(Math.min(...d)),new Date(Math.max(...d))];}
+function syncRange(){
+  const[mn,mx]=minMax();if(!mn)return;
+  const a=mn.toISOString().slice(0,10),b=mx.toISOString().slice(0,10);
   const fF=document.getElementById('fF'),fT=document.getElementById('fT');
-  const mnS=mn.toISOString().slice(0,10),mxS=mx.toISOString().slice(0,10);
-  if(!fF.value||mnS<fF.value)fF.value=mnS;
-  if(!fT.value||mxS>fT.value)fT.value=mxS;
+  if(!fF.value||a<fF.value)fF.value=a;
+  if(!fT.value||b>fT.value)fT.value=b;
 }
-
 function inRange(row){
   const fv=document.getElementById('fF').value,tv=document.getElementById('fT').value;
   if(!fv&&!tv)return true;
-  const d=new Date(row[DT]); if(isNaN(d))return true;
+  const d=new Date(row[DT]);if(isNaN(d))return true;
   const ds=d.toISOString().slice(0,10);
   return(!fv||ds>=fv)&&(!tv||ds<=tv);
 }
-
 function resetDates(){
-  const[mn,mx]=getMinMax(); if(!mn)return;
+  const[mn,mx]=minMax();if(!mn)return;
   document.getElementById('fF').value=mn.toISOString().slice(0,10);
   document.getElementById('fT').value=mx.toISOString().slice(0,10);
-  renderSummary();
+  renderSum();
 }
-
-function refresh(){
-  syncFilterRange();
-  updateStats();
-  renderSummary();
-  renderRaw();
-  updateNote();
-  document.getElementById('hBadge').textContent=data.length?`${data.length.toLocaleString()} records`:'No data';
-}
+function refresh(){syncRange();updateStats();renderSum();renderRaw();updateNote();document.getElementById('hBadge').textContent=data.length?data.length.toLocaleString()+' records':'No data';}
+function setSt(t){document.getElementById('syncSt').textContent=t;}
+function showMsg(type,msg){const b=document.getElementById('msgBar');b.className='msg '+type;b.textContent=msg;if(type!=='err')setTimeout(()=>{b.style.display='none';},5000);}
 
 // ── STATS ─────────────────────────────────────────────────────────────────────
 function updateStats(){
-  const n=data.length,pa=data.filter(r=>isYes(r[PA])).length;
-  const amt=data.reduce((s,r)=>s+toN(r[AM])+toN(r[EL]),0);
-  const[,mx]=getMinMax();
+  const n=data.length,pa=data.filter(r=>isYes(r[PA])).length,amt=data.reduce((s,r)=>s+toN(r[AM])+toN(r[EL]),0);
+  const[,mx]=minMax();
   document.getElementById('sN').textContent=n?n.toLocaleString():'—';
   document.getElementById('sP').textContent=n?pa.toLocaleString():'—';
-  document.getElementById('sA').textContent=n?fmtN(amt):'—';
+  document.getElementById('sA').textContent=n?fmt(amt):'—';
   document.getElementById('sR').textContent=n?((pa/n)*100).toFixed(1)+'%':'—';
   document.getElementById('sD').textContent=mx?mx.toISOString().slice(0,10):'—';
 }
 
 // ── SUMMARY ───────────────────────────────────────────────────────────────────
-function renderSummary(){
+function renderSum(){
   const w=document.getElementById('sWrap');
-  if(!data.length){w.innerHTML='<div style="text-align:center;padding:40px;color:#bbb">Upload a file to see summary</div>';return;}
+  if(!data.length){w.innerHTML='<div style="padding:40px;text-align:center;color:#bbb">Upload a file to see summary</div>';return;}
   const f=data.filter(inRange);
   let gN=0,gR=0,gE=0,gP=0,gA=0,body='';
-  CLS.forEach(cl=>{
-    DMS.forEach((dm,di)=>{
-      const rows=f.filter(r=>r[CL]===cl&&r[DM]===dm);
-      const n=rows.length,reg=rows.filter(r=>isYes(r[RG])).length,
-            elig=rows.filter(r=>isYes(r[EL])).length,
-            pa=rows.filter(r=>isYes(r[PA])).length,
-            amt=rows.reduce((s,r)=>s+toN(r[AM])+toN(r[EL]),0),
-            rate=n?((pa/n)*100).toFixed(1)+'%':'0%';
-      gN+=n;gR+=reg;gE+=elig;gP+=pa;gA+=amt;
-      body+=`<tr>
-        <td class="${di===0?'cl-cell':'cl-cell2'}">${di===0?cl:''}</td>
-        <td class="dm-cell">${DS2[dm]}</td>
-        <td class="num">${n.toLocaleString()}</td>
-        <td class="num">${reg.toLocaleString()}</td>
-        <td class="num">${elig.toLocaleString()}</td>
-        <td class="num">${pa.toLocaleString()}</td>
-        <td class="num">${amt.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}</td>
-        <td class="num">${rate}</td>
-      </tr>`;
-    });
-  });
-  const gRate=gN?((gP/gN)*100).toFixed(1)+'%':'0%';
-  w.innerHTML=`<table>
-    <thead><tr><th>Cluster</th><th>Domain</th><th>NMR</th><th>Registered</th><th>Count Eligibility</th><th>Count PA</th><th>Amount PA</th><th>PA Rate %</th></tr></thead>
-    <tbody>${body}<tr class="tot-row"><td colspan="2">Grand Total</td>
-    <td class="num">${gN.toLocaleString()}</td><td class="num">${gR.toLocaleString()}</td><td class="num">${gE.toLocaleString()}</td>
-    <td class="num">${gP.toLocaleString()}</td><td class="num">${gA.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}</td>
-    <td class="num">${gRate}</td></tr></tbody></table>`;
+  CLS.forEach(cl=>{DMS.forEach((dm,di)=>{
+    const rows=f.filter(r=>r[CL]===cl&&r[DM]===dm);
+    const n=rows.length,reg=rows.filter(r=>isYes(r[RG])).length,elig=rows.filter(r=>isYes(r[EL])).length,pa=rows.filter(r=>isYes(r[PA])).length,amt=rows.reduce((s,r)=>s+toN(r[AM])+toN(r[EL]),0),rate=n?((pa/n)*100).toFixed(1)+'%':'0%';
+    gN+=n;gR+=reg;gE+=elig;gP+=pa;gA+=amt;
+    body+=`<tr><td class="${di===0?'cl1':'cl2'}">${di===0?cl:''}</td><td class="dm">${DS2[dm]}</td><td class="num">${n.toLocaleString()}</td><td class="num">${reg.toLocaleString()}</td><td class="num">${elig.toLocaleString()}</td><td class="num">${pa.toLocaleString()}</td><td class="num">${amt.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}</td><td class="num">${rate}</td></tr>`;
+  });});
+  const gr=gN?((gP/gN)*100).toFixed(1)+'%':'0%';
+  w.innerHTML=`<table><thead><tr><th>Cluster</th><th>Domain</th><th>NMR</th><th>Registered</th><th>Count Eligibility</th><th>Count PA</th><th>Amount PA</th><th>PA Rate %</th></tr></thead><tbody>${body}<tr class="tot"><td colspan="2">Grand Total</td><td class="num">${gN.toLocaleString()}</td><td class="num">${gR.toLocaleString()}</td><td class="num">${gE.toLocaleString()}</td><td class="num">${gP.toLocaleString()}</td><td class="num">${gA.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}</td><td class="num">${gr}</td></tr></tbody></table>`;
 }
 
 // ── RAW DATA ──────────────────────────────────────────────────────────────────
 function getFR(){
-  const q=document.getElementById('rSrch').value.toLowerCase();
-  const cl=document.getElementById('rCl').value,dm=document.getElementById('rDm').value;
-  return data.filter(r=>{
-    if(cl&&r[CL]!==cl)return false;
-    if(dm&&r[DM]!==dm)return false;
-    if(q)return Object.values(r).some(v=>String(v||'').toLowerCase().includes(q));
-    return true;
-  });
+  const q=document.getElementById('rSrch').value.toLowerCase(),cl=document.getElementById('rCl').value,dm=document.getElementById('rDm').value;
+  return data.filter(r=>{if(cl&&r[CL]!==cl)return false;if(dm&&r[DM]!==dm)return false;if(q)return Object.values(r).some(v=>String(v||'').toLowerCase().includes(q));return true;});
 }
-
 function renderRaw(){
-  const empty=document.getElementById('rEmpty');
-  if(!data.length){empty.style.display='block';document.getElementById('rH').innerHTML='';document.getElementById('rB').innerHTML='';document.getElementById('pg').innerHTML='';document.getElementById('rCnt').textContent='';return;}
-  empty.style.display='none';
+  const emp=document.getElementById('rEmp');
+  if(!data.length){emp.style.display='block';document.getElementById('rH').innerHTML='';document.getElementById('rB').innerHTML='';document.getElementById('pg').innerHTML='';document.getElementById('rCnt').textContent='';return;}
+  emp.style.display='none';
   const f=getFR(),tot=Math.ceil(f.length/PG)||1;
-  document.getElementById('rCnt').textContent=`${f.length.toLocaleString()} records`;
+  document.getElementById('rCnt').textContent=f.length.toLocaleString()+' records';
   if(rp>tot)rp=1;
-  const pg=f.slice((rp-1)*PG,rp*PG);
-  const cols=hdrs.slice(0,18);
-  document.getElementById('rH').innerHTML=`<tr>${cols.map(h=>`<th>${h}</th>`).join('')}</tr>`;
-  document.getElementById('rB').innerHTML=pg.map(r=>`<tr>${cols.map(h=>`<td>${r[h]??''}</td>`).join('')}</tr>`).join('');
+  const pg=f.slice((rp-1)*PG,rp*PG),cols=hdrs.slice(0,16);
+  document.getElementById('rH').innerHTML='<tr>'+cols.map(h=>`<th>${h}</th>`).join('')+'</tr>';
+  document.getElementById('rB').innerHTML=pg.map(r=>'<tr>'+cols.map(h=>`<td>${r[h]??''}</td>`).join('')+'</tr>').join('');
   document.getElementById('pg').innerHTML=tot>1?`<button onclick="rp--;renderRaw()" ${rp===1?'disabled':''}>← Prev</button><span>Page ${rp} / ${tot}</span><button onclick="rp++;renderRaw()" ${rp===tot?'disabled':''}>Next →</button>`:'';
 }
 
 // ── DELETE ────────────────────────────────────────────────────────────────────
-function previewDelete(){
-  const cl=document.getElementById('dCl').value;
-  const df=document.getElementById('dF').value;
-  const dt=document.getElementById('dT').value;
-  const prev=document.getElementById('delPreview');
-  const btn=document.getElementById('delBtn');
-
-  if(!cl){prev.textContent='Please select a cluster first.';btn.disabled=true;return;}
-
-  pendingDelete=data.filter(r=>{
+function previewDel(){
+  const cl=document.getElementById('dCl').value,df=document.getElementById('dF').value,dt=document.getElementById('dT').value;
+  const prev=document.getElementById('delPrev'),btn=document.getElementById('delBtn');
+  if(!cl){prev.textContent='Please select a cluster first.';btn.disabled=true;btn.style.opacity='.4';return;}
+  pending=data.filter(r=>{
     if(r[CL]!==cl)return false;
-    const d=new Date(r[DT]); if(isNaN(d))return false;
+    const d=new Date(r[DT]);if(isNaN(d))return false;
     const ds=d.toISOString().slice(0,10);
     return(!df||ds>=df)&&(!dt||ds<=dt);
   });
-
-  if(!pendingDelete.length){
-    prev.textContent='No records found for this selection.';
-    btn.disabled=true;
-    return;
-  }
-
-  const byDomain={};
-  pendingDelete.forEach(r=>{byDomain[r[DM]]=(byDomain[r[DM]]||0)+1;});
-  const breakdown=Object.entries(byDomain).map(([d,n])=>`${DS2[d]||d}: ${n.toLocaleString()}`).join(' · ');
-  prev.innerHTML=`<strong>${pendingDelete.length.toLocaleString()} records</strong> will be deleted from <strong>${cl}</strong>${df?' from '+df:''}${dt?' to '+dt:''}<br><small style="color:#888">${breakdown}</small>`;
-  btn.disabled=false;
+  if(!pending.length){prev.textContent='No records found for this selection.';btn.disabled=true;btn.style.opacity='.4';return;}
+  const bd={};pending.forEach(r=>{bd[r[DM]]=(bd[r[DM]]||0)+1;});
+  const bk=Object.entries(bd).map(([d,n])=>`${DS2[d]||d}: ${n.toLocaleString()}`).join(' · ');
+  prev.innerHTML='<strong>'+pending.length.toLocaleString()+' records</strong> will be deleted from <strong>'+cl+'</strong>'+(df?' from '+df:'')+(dt?' to '+dt:'')+'<br><small style="opacity:.7">'+bk+'</small>';
+  btn.disabled=false;btn.style.opacity='1';
+}
+function askDel(){
+  if(!pending.length)return;
+  openConf('Confirm delete','Delete <strong>'+pending.length.toLocaleString()+' records</strong>? This cannot be undone.',async()=>{
+    const before=data.length,enc=new Set(pending.map(r=>r['ENC']));
+    data=data.filter(r=>!enc.has(r['ENC']));
+    const ok=await saveData();
+    if(ok){showMsg('ok','Deleted '+(before-data.length).toLocaleString()+' records');refresh();document.getElementById('delPrev').textContent='Select a cluster and date range, then click Preview';document.getElementById('delBtn').disabled=true;document.getElementById('delBtn').style.opacity='.4';pending=[];}
+  });
+}
+function askClearAll(){
+  openConf('Clear all data','Delete ALL records from shared storage? All users will lose access.',async()=>{
+    try{
+      if(ghToken&&fileSha){
+        await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`,
+          {method:'DELETE',headers:{Authorization:'token '+ghToken,'Content-Type':'application/json'},body:JSON.stringify({message:'Clear tracker data',sha:fileSha})});
+        fileSha='';
+      }
+    }catch(e){}
+    data=[];hdrs=[];refresh();showMsg('info','All data cleared');setSt('No data');
+  });
 }
 
-function showDeleteConfirm(){
-  if(!pendingDelete.length)return;
-  document.getElementById('confirmMsg').innerHTML=`Delete <strong>${pendingDelete.length.toLocaleString()} records</strong>? This cannot be undone.`;
-  document.getElementById('confirmModal').classList.add('open');
+// ── CONFIRM MODAL ─────────────────────────────────────────────────────────────
+function openConf(title,msg,onOk){
+  document.getElementById('confTitle').textContent=title;
+  document.getElementById('confMsg').innerHTML=msg;
+  document.getElementById('confOk').onclick=()=>{closeConf();onOk();};
+  document.getElementById('confOverlay').classList.add('open');
 }
-
-async function confirmDelete(){
-  closeModal();
-  const before=data.length;
-  const delSet=new Set(pendingDelete.map(r=>r['ENC']));
-  data=data.filter(r=>!delSet.has(r['ENC']));
-  const deleted=before-data.length;
-  const ok=saveData();
-  if(ok){
-    showStatus('ok',`✅ Deleted ${deleted.toLocaleString()} records`);
-    refresh();
-    document.getElementById('delPreview').textContent='Select a cluster and date range, then click Preview';
-    document.getElementById('delBtn').disabled=true;
-    pendingDelete=[];
-  }
-}
-
-function showClearConfirm(){
-  document.getElementById('confirmMsg').innerHTML='Delete <strong>ALL</strong> records from shared storage? Everyone will lose access to the data.';
-  document.getElementById('confirmModal').classList.add('open');
-  document.getElementById('confirmModal').dataset.mode='clearall';
-}
-
-function confirmClearAll(){
-  closeModal();
-  data=[];hdrs=[];
-  try{
-    let i=0;
-    while(localStorage.getItem(STORE_KEY+'_'+i)!==null){localStorage.removeItem(STORE_KEY+'_'+i);i++;}
-    localStorage.removeItem(STORE_KEY+'_meta');
-  }catch(e){}
-  refresh();
-  showStatus('info','All data cleared from shared storage');
-}
-
-function closeModal(){
-  const m=document.getElementById('confirmModal');
-  m.classList.remove('open');
-  delete m.dataset.mode;
-}
-document.getElementById('confirmModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal();});
-
-// override confirmDelete to handle both modes
-const _origConfirm=confirmDelete;
-window.confirmDelete=async function(){
-  const m=document.getElementById('confirmModal');
-  if(m.dataset.mode==='clearall'){confirmClearAll();}
-  else{_origConfirm();}
-};
+function closeConf(){document.getElementById('confOverlay').classList.remove('open');}
 
 // ── TABS ──────────────────────────────────────────────────────────────────────
 function goTab(name,btn){
@@ -596,41 +499,27 @@ function goTab(name,btn){
   btn.classList.add('on');
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('on'));
   document.getElementById('tab-'+name).classList.add('on');
-  if(name==='rawdata')renderRaw();
+  if(name==='raw')renderRaw();
 }
 
 // ── DOWNLOADS ─────────────────────────────────────────────────────────────────
-function dlSummary(){
+function dlSum(){
   if(!data.length)return;
-  const f=data.filter(inRange);
-  const rows=[['Cluster','Domain','NMR','Registered','Count Eligibility','Count PA','Amount PA','PA Rate %']];
-  CLS.forEach(cl=>{DMS.forEach(dm=>{
-    const r=f.filter(x=>x[CL]===cl&&x[DM]===dm);
-    const n=r.length,reg=r.filter(x=>isYes(x[RG])).length,elig=r.filter(x=>isYes(x[EL])).length,pa=r.filter(x=>isYes(x[PA])).length;
-    const amt=r.reduce((s,x)=>s+toN(x[AM])+toN(x[EL]),0);
-    rows.push([cl,DS2[dm],n,reg,elig,pa,+amt.toFixed(2),n?((pa/n)*100).toFixed(1)+'%':'0%']);
-  });});
-  const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(rows),'Summary');
-  XLSX.writeFile(wb,`PA_Summary_${new Date().toISOString().slice(0,10)}.xlsx`);
+  const f=data.filter(inRange),rows=[['Cluster','Domain','NMR','Registered','Count Eligibility','Count PA','Amount PA','PA Rate %']];
+  CLS.forEach(cl=>{DMS.forEach(dm=>{const r=f.filter(x=>x[CL]===cl&&x[DM]===dm);const n=r.length,reg=r.filter(x=>isYes(x[RG])).length,elig=r.filter(x=>isYes(x[EL])).length,pa=r.filter(x=>isYes(x[PA])).length,amt=r.reduce((s,x)=>s+toN(x[AM])+toN(x[EL]),0);rows.push([cl,DS2[dm],n,reg,elig,pa,+amt.toFixed(2),n?((pa/n)*100).toFixed(1)+'%':'0%']);});});
+  const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(rows),'Summary');XLSX.writeFile(wb,'PA_Summary_'+new Date().toISOString().slice(0,10)+'.xlsx');
 }
-
 function dlRaw(){
   if(!data.length)return;
-  const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(getFR()),'Raw_Data');
-  XLSX.writeFile(wb,`PA_RawData_${new Date().toISOString().slice(0,10)}.xlsx`);
+  const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(getFR()),'Raw_Data');XLSX.writeFile(wb,'PA_RawData_'+new Date().toISOString().slice(0,10)+'.xlsx');
 }
 
-// ── STATUS & NOTE ─────────────────────────────────────────────────────────────
-function showStatus(type,msg){
-  const b=document.getElementById('statusBar');
-  b.className='status '+type;b.textContent=msg;
-  if(type!=='err')setTimeout(()=>{b.style.display='none';},5000);
-}
+// ── NOTE ──────────────────────────────────────────────────────────────────────
 function updateNote(){
   const n=document.getElementById('note');
   if(!data.length){n.textContent='';return;}
-  const[mn,mx]=getMinMax();
-  n.textContent=`${data.length.toLocaleString()} records · ${mn.toISOString().slice(0,10)} → ${mx.toISOString().slice(0,10)} · Data stored in this browser · Share by exporting and re-uploading`;
+  const[mn,mx]=minMax();
+  n.textContent=data.length.toLocaleString()+' records synced with GitHub · '+mn.toISOString().slice(0,10)+' → '+mx.toISOString().slice(0,10)+' · All users with the link see the same live data';
 }
 </script>
 </body>
